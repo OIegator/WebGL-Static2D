@@ -1,7 +1,7 @@
 {
   "scripts": {
-    "start": "parcel index.html",
-    "build": "parcel build index.html --dist-dir docs  --no-source-maps --public-url ./"
+    "start": "parcel pentagon-cube-2D/index.html",
+    "build": "parcel build pentagon-cube-2D/index.html --dist-dir docs  --no-source-maps --public-url ./"
   },
   "devDependencies": {
     "@babel/core": "^7.19.1",

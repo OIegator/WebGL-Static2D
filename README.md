@@ -1,5 +1,7 @@
 # Development
 
+# Setup
+- Set correct path to current index.html file in start function of package.json 
 ```
 npm install
 npm start

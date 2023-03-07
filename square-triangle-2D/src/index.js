@@ -1,7 +1,7 @@
 import squareVS from '../shaders/squareVS.glsl'
-import squareFS from '../shaders/squareFS.glsl'
-import rectangleVS from '../shaders/triangleVS.glsl'
-import rectangleFS from '../shaders/triangleFS.glsl'
+import triangleVS from '../shaders/triangleVS.glsl'
+import triangleFS from '../shaders/triangleFS.glsl'
+import tigerSquareFS from '../../pentagon-cube-2D/shaders/tigerSquareFS.glsl'
 import * as glm from "gl-matrix";
 
 const canvas = document.querySelector('canvas');
@@ -37,14 +37,14 @@ function main() {
         gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
     }
 
-    if (false) {
-        const shaderProgram = initShaderProgram(gl, squareVS, squareFS);
+    if (true) {
+        const shaderProgram = initShaderProgram(gl, squareVS, tigerSquareFS);
 
         gl.useProgram(shaderProgram);
         drawSquare(shaderProgram);
     } else {
 
-        const shaderProgram = initShaderProgram(gl, rectangleVS, rectangleFS);
+        const shaderProgram = initShaderProgram(gl, triangleVS, triangleFS);
 
         gl.useProgram(shaderProgram);
         drawTriangle(shaderProgram);
@@ -170,7 +170,7 @@ function drawTriangle(shaderProgram) {
 
     gl.uniformMatrix4fv(prMatrix, false, projectionMatrix)
     gl.uniformMatrix4fv(mvMatrix, false, modelViewMatrix)
-    gl.drawArrays(gl.TRIANGLES, 0, 4);
+    gl.drawArrays(gl.TRIANGLES, 0, 3);
 }
 
 
